@@ -1,5 +1,9 @@
 # Personal wiki 
-## Markdown files to use with Obsidian
+## Markdown files to use with [Obsidian]
 
-https://zzeroo.com
-https://github.com/zzeroo/wiki-notes
+
+- [zzeroo.com](https://zzeroo.com)
+- [obsidian](https://obsidian.md/)
+
+
+[obsidian]: https://obsidian.md/
