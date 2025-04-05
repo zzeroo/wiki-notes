@@ -21,27 +21,32 @@ openssl x509 -in ca-root.pem -text
 http://wiki.cacert.org/FAQ/subjectAltName
 
 ## 2.1 First create a key
+
 ```
 openssl genrsa -out v-elk-01-zzeroo-lan-2048.key 4096
 ```
 
 ## 2.1 create the CSR
+
 ```
 openssl req -new -sha256 -subj "/CN=v-elk-01" -key v-elk-01-zzeroo-lan-2048.key -out v-elk-01-zzeroo-lan-2048.csr
 ```
 
 ## 2.2 Create the certificate from the CSR
 ### 2.2.1 Create a config file for DNS and IP addresses
+
 ```
-echo "subjectAltName=DNS.1:v-elk-01.zzeroo.lan,DNS.2:v-elk-01,DNS.3:elk,IP.1:192.168.10.13" >> v-elk-01-zzeroo-lan-2048.cnf
+echo "subjectAltName=DNS.1:v-elk-01.zzeroo.lan,DNS.2:v-elk-01,DNS.3:elk.zzeroo.lan,DNS.4:elk,IP.1:192.168.10.13" >> v-elk-01-zzeroo-lan-2048.cnf
 ```
 
 ### 2.2.2 Create the certificate
+
 ```
 openssl x509 -req -sha256 -days 365 -in v-elk-01-zzeroo-lan-2048.csr -CA ca-root.pem -CAkey ca-key.pem -out elk-01-zzeroo-lan-2048.pem -extfile v-elk-01-zzeroo-lan-2048.cnf -CAcreateserial
 ```
 
 # 3. build a chain file
+
 you might want to have an additional intermediate certificate in your organizations process
 
 ```
