@@ -32,7 +32,7 @@ openssl genrsa -out v-elk-01-zzeroo-lan.key 4096
 openssl req -new -sha256 -subj "/CN=v-elk-01" -key v-elk-01-zzeroo-lan.key -out v-elk-01-zzeroo-lan.csr
 ```
 
-## 2.2 Create the certificate from the CSR
+## 2.2 Sign a certificate from CSR
 ### 2.2.1 Create a config file for DNS and IP addresses
 
 ```

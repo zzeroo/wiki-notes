@@ -9,7 +9,7 @@ sudo apt update
 Then, install the required dependencies by running the following command:
 
 ```
-sudo apt install git curl libpng-dev libpq-dev build-essential libfreetype6-dev libjpeg-dev libzip-dev libssl-dev libmcrypt-dev libonig-dev libcurl4-openssl-dev
+sudo apt install git curl
 ```
 
 ## Step 2: Install Apache Web Server
