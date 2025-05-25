@@ -1,10 +1,15 @@
-How To - ACME (Let's Encrypt!) - DNS Manual
+# How To - ACME (Let's Encrypt!) - DNS Manual
+
+<https://www.reddit.com/r/PFSENSE/comments/5v6b0a/how_to_acme_lets_encrypt_dns_manual/>
+<https://docs.netgate.com/pfsense/en/latest/packages/acme/index.html>
+
 Just wanted to do a quick write up on what I learned over the weekend, hopefully, it will help someone!
 This guide is for using the DNS Manual verification method (the easiest method IMHO) in the ACME
 package for PFsense. Generally, it's very easy to use the package, but there is one gotcha with the DNS
 Manual method and I'll say it right now, don't hit 'Issue' twice!
-Guide:
-Installation
+
+## Installation
+
 1. Install the acme package, once that's installed head over to Services -> Acme Certificates.
 Create Account Key
 1. First head right over to 'Account Keys'. You need to create an account in order for certificates to
@@ -15,7 +20,9 @@ going to use the cert in production, I'll explain why later on).
 4. Hit that big 'Create new account key' button to generate a new PKI key pair. Then hit 'Register acme
 account key'.
 5. Hit that small Save button now.
-Create Certificate Profile
+
+## Create Certificate Profile
+
 1. Head over to 'Certificates' and hit 'Add'.
 2. Give it a name, I always do domain-tld-prod, but do whatever you like.
 3. Select your Acme Account to the account you just created.
@@ -32,7 +39,8 @@ to restart to use the new one)
 8. Leave DNS-Sleep and Cert renewal after to the defaults.
 9. Hit Save!
 
-Issuing and Verification
+## Issuing and Verification
+
 1. Here's where the fun starts.
 2. Hit "Issue" (this is the one and only time you'll hit 'Issue'. Don't hit it again!). Wait for the response.
 3. When it comes back it will say the follow, copy and paste the message into your editor: Add the
